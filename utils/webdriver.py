@@ -12,3 +12,6 @@ class Webdriver:
 
     def open_url(self, url):
         self.driver.get(url)
+
+    def close(self):
+        self.driver.quit()

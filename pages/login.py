@@ -6,6 +6,7 @@ class LoginPage(webdriver.Webdriver):
 
     def __init__(self):
         super().__init__()
+        self.By = By
         self.username_input = (By.ID, "user-name")
         self.password_input = (By.ID, "password")
         self.login_button = (By.ID, "login-button")

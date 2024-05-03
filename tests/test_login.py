@@ -28,3 +28,13 @@ class TestLogin(unittest.TestCase):
 
         self.login_page.close()
 
+    def test_empty_password(self):
+        self.login_page.open_url(config.baseUrl)
+        self.login_page.login("standard_user", "")
+
+        message_error = self.login_page.driver.find_element(self.login_page.By.XPATH, "//h3[@data-test='error']")
+
+        self.assertTrue(message_error, "Epic sadface: Password is required")
+
+        self.login_page.close()
+
